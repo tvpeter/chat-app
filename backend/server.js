@@ -12,11 +12,11 @@ app.get("/", (req, res) => {
     res.send("app is running");
 })
 
-app.get("/chats", (req, res) => {
+app.get("/api/chats", (req, res) => {
     res.send(chats);
 })
 
-app.get("/chats/:id", (req, res) => {
+app.get("/api/chats/:id", (req, res) => {
     // console.log(req.params.id);
     const chat = chats.find((c) => c._id == req.params.id);
     res.send(chat);
