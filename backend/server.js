@@ -4,6 +4,7 @@ import colors from 'colors';
 
 import { connectDB } from './config/db.js';
 import { router as userRoutes } from './routes/userRoutes.js';
+import { router as chatRoutes } from './routes/chatRoutes.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 const app = express();
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
     res.send("app is running");
 })
 app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
